@@ -15,11 +15,11 @@ const handler = async (m, {
     args,
     usedPrefix
 }) => {
-    if (!text) throw `give a text to search Example: *${usedPrefix + command}* sefali odia song`;
+    if (!text) throw `dar un texto para buscar Ejemplo: *${usedPrefix + command}* sefali odia song`;
     conn.GURUPLAY = conn.GURUPLAY ? conn.GURUPLAY : {};
     await conn.reply(m.chat, wait, m);
     const result = await searchAndDownloadMusic(text);
-    const infoText = `✦ ──『 *GURU PLAYER* 』── ⚝ \n\n [ ⭐ Reply the number of the desired search result to get the Audio]. \n\n` ;
+    const infoText = `✦ ──『 *PLAYER* 』── ⚝ \n\n [ ⭐ Responda el número del resultado de búsqueda deseado para obtener el audio]. \n\n` ;
 
 const orderedLinks = result.allLinks.map((link, index) => {
     const sectionNumber = index + 1;
@@ -120,7 +120,7 @@ function formatBytes(bytes, decimals = 2) {
 async function searchAndDownloadMusic(query) {
     try {
         const { videos } = await yts(query);
-        if (!videos.length) return "Sorry, no video results were found for this search.";
+        if (!videos.length) return "Lo sentimos, no se encontraron resultados de vídeo para esta búsqueda.";
 
         const allLinks = videos.map(video => ({
             title: video.title,
