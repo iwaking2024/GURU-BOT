@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 
 let handler = async (m, { conn, text }) => {
-    if (!text) throw 'Please provide manhwa name to search for.';
+    if (!text) throw 'Por favor proporcione el nombre manhwa para buscar.';
     let query = encodeURIComponent(text)
 
     const url = `https://asura.guruapi.tech/asura/search?name=${query}`;
@@ -22,7 +22,7 @@ let handler = async (m, { conn, text }) => {
     let json2 = await response2.json();
 
     if (!response2.ok) {
-        throw `An error occurred: ${json2.error}`;
+        throw `Ocurrió un error: ${json2.error}`;
     }
     let lastEpisodeUrl = 'N/A';
 
