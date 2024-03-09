@@ -16,20 +16,20 @@ export async function before(m, { isAdmin, isBotAdmin }) {
     if (chat.antiToxic && isAntiToxic) {
         var analysisResult = await Analyze(m.text)
         var toxicityLevels = [
-            "❤️  ❤️  ❤️  ❤️  ❤️", // Very friendly and welcoming
-            "☠️  ❤️  ❤️  ❤️  ❤️", // Mildly toxic, is it fun?
-            "☠️  ☠️  ❤️  ❤️  ❤️", // A bit toxic, calm down!
-            "☠️  ☠️  ☠️  ❤️  ❤️", // Quite toxic, you can relax!
-            "☠️  ☠️  ☠️  ☠️  ❤️", // Highly toxic, be careful!
-            "☠️  ☠️  ☠️  ☠️  ☠️"   // Extremely toxic!
+            "❤️  ❤️  ❤️  ❤️  ❤️", // Muy amable y acogedor
+            "☠️  ❤️  ❤️  ❤️  ❤️", // Ligeramente tóxico, ¿es divertido?
+            "☠️  ☠️  ❤️  ❤️  ❤️", // Un poco tóxico, cálmate!
+            "☠️  ☠️  ☠️  ❤️  ❤️", // Bastante tóxico, puedes relajarte!
+            "☠️  ☠️  ☠️  ☠️  ❤️", // Altamente tóxico, ¡cuidado!
+            "☠️  ☠️  ☠️  ☠️  ☠️"   // Extremadamente tóxico!
         ];
         var toxicityVerdict = [
-            "You are so friendly. Very welcoming to know you!",
-            "You are not too toxic, is it fun?",
-            "You appear to be toxic. Calm down!",
-            "Don't be so toxic. You can relax!",
-            "There's nothing more I could say, you're totally the most toxic person in the world!",
-            "Your toxic meter also goes above 100%."
+            "Eres tan amigable. es un placer conocerte!",
+            "No eres demasiado tóxico, ¿es divertido?",
+            "Pareces ser tóxico. Cálmate!",
+            "No seas tan tóxico. Puedes relajarte!",
+            "No hay nada más que pueda decir, eres totalmente la persona más tóxica del mundo!",
+            "Tu medidor de tóxicos también supera el 100%"
         ];
 
         const toxicityPercentage = Number(analysisResult.toxicity * 100).toFixed(2)
