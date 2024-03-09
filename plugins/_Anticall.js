@@ -11,10 +11,10 @@ export async function before(m, { conn, isAdmin, isBotAdmin, isOwner, isROwner }
 
   // Define different message types and their corresponding messages.
   const messageType = {
-    40: '📞 You missed a voice call, and the call has been missed.',
-    41: '📹 You missed a video call, and the call has been missed.',
-    45: '📞 You missed a group voice call, and the call has been missed.',
-    46: '📹 You missed a group video call, and the call has been missed.'
+    40: '📞 Perdiste una llamada de voz y la llamada se perdió.',
+    41: '📹 Perdiste una videollamada y la llamada se perdió.',
+    45: '📞 Perdiste una llamada de voz grupal y la llamada se perdió.',
+    46: '📹 Te perdiste una videollamada grupal y la llamada se perdió.'
   }[m.messageStubType];
 
   // If a message type is found, send a message to the chat.
