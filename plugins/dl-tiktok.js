@@ -10,7 +10,7 @@ if (!args[0] && !m.quoted) throw `Dale el enlace del video Tiktok o cita un enla
  if (!args[0].match(/tiktok/gi)) throw `Verifica que el enlace sea de TikTok`;
  
  
-  let txt = 'Here your Requested video';
+  let txt = 'Aquí tu vídeo solicitado';
 
   try {
     const { author: { nickname }, video, description } = await tiktokdl(args[0]);
