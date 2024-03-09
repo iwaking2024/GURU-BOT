@@ -4,22 +4,22 @@ global.rpg = {
     if (isNaN(level)) return { name: "", level: "" };
 
     const role = [
-      { name: "Tadpole", level: 0 },
-      { name: "Lobster Larva", level: 5 }, //»»————⍟——««\n
-      { name: "Octopus Apprentice", level: 10 },
-      { name: "Siren's Apprentice", level: 15 },
-      { name: "🐬 Dolphin Diplomat", level: 20 },
-      { name: "🥷 Sea Serpent Tamer", level: 25 }, //𐏓・,〔𒁷, 𒆜〢
-      { name: "⚔ Kraken Hunter", level: 30 },
-      { name: "👑 Sea King", level: 35 },
-      { name: "🪼 Neptune's Protege", level: 40 },
-      { name: "🐍 Abyssal Ambassador", level: 45 },
-      { name: "👹 Guardian of the Abyss", level: 50 },
-      { name: "🧙‍♂️ Deep Sea Sage", level: 60 },
-      { name: "🧝‍♂️ Master of Atlantis", level: 70 },
-      { name: "🐲 Legendary Leviathan", level: 80 },
-      { name: "🔮 Ocean Overlord 🔮", level: 90 },
-      { name: "🔱 Emperor of the Seven Seas 🔱", level: 100 },
+      { name: "Renacuajo", level: 0 },
+      { name: "Larva de langosta", level: 5 }, //»»————⍟——««\n
+      { name: "Aprendiz de pulpo", level: 10 },
+      { name: "Aprendiz de sirena", level: 15 },
+      { name: "🐬 Diplomático de delfines", level: 20 },
+      { name: "🥷 Domador de serpientes marinas", level: 25 }, //𐏓・,〔𒁷, 𒆜〢
+      { name: "⚔ Cazador de krakens", level: 30 },
+      { name: "👑 El King", level: 35 },
+      { name: "🪼 El protegido de Neptuno", level: 40 },
+      { name: "🐍 Embajador abisal", level: 45 },
+      { name: "👹 Guardián del abismo", level: 50 },
+      { name: "🧙‍♂️ Salvia de aguas profundas", level: 60 },
+      { name: "🧝‍♂️ Maestro de la Atlántida", level: 70 },
+      { name: "🐲 Leviatán legendario", level: 80 },
+      { name: "🔮 Señor supremo del océano 🔮", level: 90 },
+      { name: "🔱 Emperador de los Siete Mares 🔱", level: 100 },
     ];
 
     return role.reverse().find((role) => level >= role.level);
