@@ -6,7 +6,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner, isPrems }) =
 	var limit
      if((isOwner || isPrems)) limit = 1200
      else limit = 100
-   if (!args[0]) throw `✳️ Enter the mediafire link next to the command`
+   if (!args[0]) throw `✳️ Ingrese el enlace de mediafire al lado del comando`
     if (!args[0].match(/mediafire/gi)) throw `❎ Link incorrect`
     m.react(rwait)
     let full = /f$/i.test(command)
@@ -22,7 +22,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner, isPrems }) =
 ▢ *Size:* ${filesizeH}
 ▢ *Extension:* ${ext}
 ▢ *Uploaded:* ${aploud}
-${isLimit ? `\n▢ The file exceeds the download limit *+${limit} MB*\nUpgrade to premium to be able to download files more than *900 MB*` : ''} 
+${isLimit ? `\n▢ El archivo excede el límite de descarga *+${limit} MB*\nActualiza a premium para poder descargar archivos de más de *900 MB*` : ''} 
 `.trim()
     await conn.sendFile(m.chat, ss, 'ssweb.png', caption, m)
     
