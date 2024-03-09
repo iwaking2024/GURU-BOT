@@ -2,7 +2,7 @@
 let handler = async (m, { conn, usedPrefix, command, args: [event], text }) => {
 
   let chat = global.db.data.chats[m.chat]
-  if (!chat.welcome) throw `✳️ To use this command you must activate the Welcomes with *${usedPrefix}on* welcome`
+  if (!chat.welcome) throw `✳️ Para utilizar este comando debe activar las Bienvenidas con *${usedPrefix}on* welcome`
   let te = `
   ┌─⊷ *EVENTS*
   ▢ welcome
