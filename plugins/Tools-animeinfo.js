@@ -4,7 +4,7 @@ import { Anime } from '@shineiichijo/marika';
 const client = new Anime();
 
 let handler = async (m, { conn, text, usedPrefix }) => {
-  if (!text) return m.reply(`*[❗] Please enter the name of an anime to search for.*`);
+  if (!text) return m.reply(`*[❗]Por favor ingresa el nombre de un anime para buscar.*`);
   try {
     let anime = await client.searchAnime(text);
     let result = anime.data[0];
