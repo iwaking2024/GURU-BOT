@@ -6,7 +6,7 @@ let handler = async (m, { conn, args, text, usedPrefix , command }) => {
     return conn.reply(m.chat, 'You must be at least level 5 to use this command.', m);
   }*/
 
-    let fa = `🟥 *Provide the amount of gold to bet*
+    let fa = `🟥 *Proporciona la cantidad de gold para apostar*
 
 *Example:*
 ${usedPrefix + command} 1000`.trim()
@@ -19,10 +19,10 @@ ${usedPrefix + command} 1000`.trim()
 
     let time = users.lastcf + 90000
         if (new Date - users.lastcf < 90000) throw `You can play cock-fight again in ${msToTime(time - new Date())}`
-        if (amount < 100) throw `🟥 *You can't bet gold less than 100*`
-        if (users.credit < amount) throw `🟥 *You don't have enough money for this bet.*\n*You currently have only ${credit} in gold.*`
+        if (amount < 100) throw `🟥 *no puedes apostar gold menos que 100*`
+        if (users.credit < amount) throw `🟥 *No tienes suficiente dinero para esta apuesta.*\n*Actualmente solo tienes ${credit} en gold.*`
         if (users.chicken < 1) {
-        throw `🟥 *You do not have any chicks to bet* \nUse the command ${usedPrefix}buy-chicken`
+        throw `🟥 *No tienes chicken para apostar* \nusa el comando ${usedPrefix}buy-chicken`
     }
     //if (amount > 100000) throw `🟥 *You can't bet gold more than 100000*`
 
@@ -32,7 +32,7 @@ ${usedPrefix + command} 1000`.trim()
 
       if (botScore < playerScore) {
         users.credit += amount * 1
-        status = `Your lil chicken won the fight, and made you 🪙 ${amount * 2} gold richer! 🐥`
+        status = `Tu pequeña gallina ganó la pelea y te hizo 🪙 ${amount * 2} oro Hoy eres más rico! 🐥`
       } else {
         users.credit -= amount * 1
         users.chicken -= 1
