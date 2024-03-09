@@ -39,11 +39,11 @@ let handler = async function (m, { conn, __dirname }) {
           }}}}}}, {})
     } else {
       // Handle the case where the API request fails
-      await conn.reply(m.chat, 'Unable to fetch repository information.', m);
+      await conn.reply(m.chat, 'No se puede obtener información del repositorio.', m);
     }
   } catch (error) {
     console.error(error);
-    await conn.reply(m.chat, 'An error occurred while fetching repository information.', m);
+    await conn.reply(m.chat, 'Se ha producido un error al obtener la información del repositorio.', m);
   }
 };
 
