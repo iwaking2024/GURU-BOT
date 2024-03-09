@@ -19,16 +19,16 @@ let handler = async (m, { conn, text, args, groupMetadata, usedPrefix, command }
 ▢ *Reason:* ${text}`, null, { mentions: [who] }) 
             m.reply(`
 ⚠️ *caution* ⚠️
-You received a warning from an admin
+Has recibido una advertencia de un administrador
 
 ▢ *Warns:* ${warn + 1}/${war} 
-if you receive *${war}* warnings you will be automatically removed from the group`, who)
+si usted recibe *${war}* advertencias serás eliminado automáticamente del grupo`, who)
         } else if (warn == war) {
             global.db.data.users[who].warn = 0
             m.reply(`⛔ The user exceeded the *${war}* warnings will therefore be removed`)
             await time(3000)
             await conn.groupParticipantsUpdate(m.chat, [who], 'remove')
-            m.reply(`♻️ You were removed from the group *${groupMetadata.subject}* because you have been warned *${war}* times`, who)
+            m.reply(`♻️ Fuiste eliminado del grupo *${groupMetadata.subject}* porque has sido advertido *${war}* times`, who)
         }
 }
 handler.help = ['warn @user']
