@@ -5,11 +5,11 @@ let handler = async (m, { conn, command, args, usedPrefix }) => {
    
     
     if (user.chicken > 0) return m.reply('You already have this')
-    if (user.credit < 500) return m.reply(`🟥 *You don't have sufficient amount of gold in your wallet to buy a chicken*`)
+    if (user.credit < 500) return m.reply(`🟥 *No tienes suficiente cantidad de gold en tu billetera para comprar un chicken*`)
 
     user.credit -= 1000
     user.chicken += 1
-    m.reply(`🎉 You have successfully bought a chicken to fight! Use the command ${usedPrefix}cock-fight <amount>`)
+    m.reply(`🎉 ¡Has comprado con éxito un pollo para pelear! usa el comando ${usedPrefix}cock-fight <amount>`)
 }
 
 handler.help = ['buych']
