@@ -6,7 +6,7 @@ import fetch from 'node-fetch';
 let limit = 500;
 let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) => {
   let chat = global.db.data.chats[m.chat];
-  if (!args || !args[0]) throw `✳️ Example:\n${usedPrefix + command} https://youtu.be/YzkTFFwxtXI`;
+  if (!args || !args[0]) throw `✳️ Ejemplo:\n${usedPrefix + command} https://youtu.be/YzkTFFwxtXI`;
   if (!args[0].match(/youtu/gi)) throw `❎ Verify that the YouTube link`;
   
 
@@ -14,8 +14,8 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 
   const response = await fetch(ggapi);
   if (!response.ok) {
-      console.log('Error searching for song:', response.statusText);
-      throw 'Error searching for song';
+      console.log('Error al buscar la canción:', response.statusText);
+      throw 'Error al buscar la canción';
   }
   const data = await response.json();
 
