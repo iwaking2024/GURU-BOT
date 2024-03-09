@@ -21,7 +21,7 @@ const resolveRoulette = (chatId, conn) => {
         let colour = colores[Math.floor(Math.random() * colores.length)];
 
         let winners = [];
-        let resultMessage = `The ball landed on ${colour}\n\n🎉 Winners 🎉\n\n`;
+        let resultMessage = `La pelota aterrizó en ${colour}\n\n🎉 Winners 🎉\n\n`;
 
         for (let bet of rouletteBets[chatId]) {
             let result = '';
@@ -60,23 +60,23 @@ const runRoulette = (chatId, conn) => {
 const betRoulette = (user, chatId, amount, color) => {
     let colores = ['red', 'black'];
     if (isNaN(amount) || amount < 500) {
-        throw `✳️ The minimum bet is 500 gold`;
+        throw `✳️ La apuesta mínima es 500 gold`;
     }
     if (!colores.includes(color)) {
-        throw '✳️ You must specify a valid color: red or black';
+        throw '✳️ Debes especificar un color válido: red or black';
     }
     if (users.credit < amount) {
-        throw '✳️ You do not have enough gold!';
+        throw '✳️ No tienes suficiente gold!';
     }
     if (amount > 100000) {
-        throw `🟥 You can't bet gold more than 100000`;
+        throw `🟥 No puedes apostar oro más que 100000`;
     }
 
     if (!rouletteBets[chatId]) {
         rouletteBets[chatId] = [];
     }
     rouletteBets[chatId].push({ user, amount, color });
-    return `✅ Your bet of ${amount} gold on ${color} has been placed!`;
+    return `✅ Tu apuesta de ${amount} gold on ${color} ha sido colocado!`;
 };
 
 //const handler = async (m, { conn, args, usedPrefix, command }) => {
