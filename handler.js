@@ -387,11 +387,11 @@ export async function handler(chatUpdate) {
                 else
                     m.exp += xp
                     if (!isPrems && plugin.credit && global.db.data.users[m.sender].credit < plugin.credit * 1) {
-                        this.reply(m.chat, `🟥 You don't have enough gold`, m)
+                        this.reply(m.chat, `🟥 No tienes suficiente oro`, m)
                         continue // Gold finished
                     }
                     if (plugin.level > _user.level) {
-                        this.reply(m.chat, `🟥 Level required ${plugin.level} to use this command. \nYour level ${_user.level}`, m)
+                        this.reply(m.chat, `🟥 Nivel requerido ${plugin.level} para usar este comando. \nYour level ${_user.level}`, m)
                         continue // If the level has not been reached
                     }
                 let extra = {
@@ -692,25 +692,25 @@ export async function groupsUpdate(groupsUpdate) {
         if (!chats.detect) continue
 
         if (groupUpdate.desc) {
-            text = (chats.sDesc || this.sDesc || conn.sDesc || `*${emoji.desc} Description has been changed to*\n@desc`)
+            text = (chats.sDesc || this.sDesc || conn.sDesc || `*${emoji.desc} La descripción ha sido cambiada a*\n@desc`)
                 .replace("@desc", groupUpdate.desc)
         } else if (groupUpdate.subject) {
-            text = (chats.sSubject || this.sSubject || conn.sSubject || `*${emoji.subject} Subject has been changed to*\n@subject`)
+            text = (chats.sSubject || this.sSubject || conn.sSubject || `*${emoji.subject} El tema ha sido cambiado a*\n@subject`)
                 .replace("@subject", groupUpdate.subject)
         } else if (groupUpdate.icon) {
-            text = (chats.sIcon || this.sIcon || conn.sIcon || `*${emoji.icon} Icon has been changed*`)
+            text = (chats.sIcon || this.sIcon || conn.sIcon || `*${emoji.icon} El icono ha sido cambiado*`)
                 .replace("@icon", groupUpdate.icon)
         } else if (groupUpdate.revoke) {
-            text = (chats.sRevoke || this.sRevoke || conn.sRevoke || `*${emoji.revoke} Group link has been changed to*\n@revoke`)
+            text = (chats.sRevoke || this.sRevoke || conn.sRevoke || `*${emoji.revoke} El enlace del grupo ha sido cambiado a*\n@revoke`)
                 .replace("@revoke", groupUpdate.revoke)
         } else if (groupUpdate.announce === true) {
-            text = (chats.sAnnounceOn || this.sAnnounceOn || conn.sAnnounceOn || `*${emoji.announceOn} Group is now closed!*`)
+            text = (chats.sAnnounceOn || this.sAnnounceOn || conn.sAnnounceOn || `*${emoji.announceOn} ¡El grupo ya está cerrado!*`)
         } else if (groupUpdate.announce === false) {
-            text = (chats.sAnnounceOff || this.sAnnounceOff || conn.sAnnounceOff || `*${emoji.announceOff} Group is now open!*`)
+            text = (chats.sAnnounceOff || this.sAnnounceOff || conn.sAnnounceOff || `*${emoji.announceOff} El grupo ya está abierto!*`)
         } else if (groupUpdate.restrict === true) {
-            text = (chats.sRestrictOn || this.sRestrictOn || conn.sRestrictOn || `*${emoji.restrictOn} Group is now restricted to participants only!*`)
+            text = (chats.sRestrictOn || this.sRestrictOn || conn.sRestrictOn || `*${emoji.restrictOn} El grupo ahora está restringido solo a los participantes!*`)
         } else if (groupUpdate.restrict === false) {
-            text = (chats.sRestrictOff || this.sRestrictOff || conn.sRestrictOff || `*${emoji.restrictOff} Group is now restricted to admins only!*`)
+            text = (chats.sRestrictOff || this.sRestrictOff || conn.sRestrictOff || `*${emoji.restrictOff} El grupo ahora está restringido solo a administradores!*`)
         }
         
 
@@ -795,7 +795,7 @@ export async function presenceUpdate(presenceUpdate) {
         await console.log("AFK");
         const username = nouser[0].split("@")[0];
         const timeAfk = new Date() - user.afk;
-        const caption = `\n@${username} has stopped being AFK and is currently typing.\n\nReason: ${
+        const caption = `\n@${username} ha dejado de estar AFK y actualmente está escribiendo.\n\nReason: ${
             user.afkReason ? user.afkReason : "No Reason"
           }\nFor the past ${timeAfk.toTimeString()}.\n`;
           
