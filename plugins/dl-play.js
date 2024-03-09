@@ -15,7 +15,7 @@ const handler = async (m, {
     args,
     usedPrefix
 }) => {
-    if (!text) throw `dar un texto para buscar Ejemplo: *${usedPrefix + command}* sefali odia song`;
+    if (!text) throw `dar un texto para buscar Ejemplo: *${usedPrefix + command}* Magnate Y valentino`;
     conn.GURUPLAY = conn.GURUPLAY ? conn.GURUPLAY : {};
     await conn.reply(m.chat, wait, m);
     const result = await searchAndDownloadMusic(text);
