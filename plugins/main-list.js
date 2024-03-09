@@ -10,17 +10,17 @@ let handler = async (m, { conn, usedPrefix, command}) => {
       switch (command) {
         case 'list':
 lkr = "*Get ready for the ride, here are your ticket options:*\n\n" +
-"🤖 *" + usedPrefix + "botmenu* - The Bot's secret control panel. What's your command, oh great one?\n\n" +
-"👑 *" + usedPrefix + "ownermenu* - The sacred scroll only for the chosen one. Yep, that's you, Boss!\n\n" +
-"🧑‍🤝‍🧑 *" + usedPrefix + "groupmenu* - Group shenanigans central! Unite, chat, conquer!\n\n" +
-"📥 *" + usedPrefix + "dlmenu* - 'DL' stands for 'Delicious Loot'. Come grab your goodies!\n\n" +
-"🎉 *" + usedPrefix + "funmenu* - The bot's party hat. Games, jokes and instant ROFLs. Let's get this party started!\n\n" +
-"💰 *" + usedPrefix + "economymenu* - Bling bling! Your personal vault of virtual economy. Spend or save? Choose wisely!\n\n" +
-"🎮 *" + usedPrefix + "gamemenu* - Enter the gaming arena. May the odds be ever in your favor!\n\n" +
-"🎨 *" + usedPrefix + "stickermenu* - A rainbow of stickers for your inner artist. Make your chats pop!\n\n" +
-"🧰 *" + usedPrefix + "toolmenu* - Your handy-dandy toolkit. What's your pick, genius?\n\n" +
-"🎩 *" + usedPrefix + "logomenu* - Create a logo that screams YOU. Or whispers. You choose the volume.\n\n" +
-"🌙 *" + usedPrefix + "nsfwmenu* - The After Dark menu. But remember, sharing adult secrets must be consent-based.";
+"🤖 *" + usedPrefix + "botmenu* - El panel de control secreto del Bot. ¿Cuál es tu orden, oh grandioso?\n\n" +
+"👑 *" + usedPrefix + "ownermenu* -El pergamino sagrado sólo para el elegido. Sí, ese eres tú, Jefe.!\n\n" +
+"🧑‍🤝‍🧑 *" + usedPrefix + "groupmenu* - Central de travesuras en grupo Unirse, charlar, conquistar!\n\n" +
+"📥 *" + usedPrefix + "dlmenu* - 'DL' significa "Delicioso botín". Ven a por tus golosinas!\n\n" +
+"🎉 *" + usedPrefix + "funmenu* - El sombrero de fiesta del bot. Juegos, bromas y risas instantáneas. ¡Que empiece la fiesta!\n\n" +
+"💰 *" + usedPrefix + "economymenu* - ¡Bling bling! Tu bóveda personal de economía virtual. ¿Gastar o ahorrar? Elige sabiamente!\n\n" +
+"🎮 *" + usedPrefix + "gamemenu* - Entra en la arena del juego. Que las probabilidades estén siempre a tu favor!\n\n" +
+"🎨 *" + usedPrefix + "stickermenu* - Un arco iris de pegatinas para el artista que llevas dentro. Haz que tus chats destaquen!\n\n" +
+"🧰 *" + usedPrefix + "toolmenu* - Tu caja de herramientas. ¿Qué eliges, genio??\n\n" +
+"🎩 *" + usedPrefix + "logomenu* - Cree un logotipo que grite USTED. O que susurre. Usted elige el volumen.\n\n" +
+"🌙 *" + usedPrefix + "nsfwmenu* - El menú After Dark. Pero recuerda que compartir secretos de adultos debe hacerse con consentimiento.";
 break;
 
           
@@ -281,10 +281,10 @@ break;
           lkr = `use command ${usedPrefix}nsfw`; // 
           break;
           case 'logomenu':
-          lkr = `use ${usedPrefix}logo to see all options \ngfx cmd upto 12`; // 
+          lkr = `use ${usedPrefix}logo para ver todas las opciones \ncmd gfx hasta el 12`; // 
           break;
         default:
-          lkr = `Invalid command. Type ${usedPrefix}list to see available options.`;
+          lkr = `Comando inválido. Escriba ${usedPrefix}para ver las opciones disponibles.`;
       }
     
       conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, false, { mentions: [who] });
