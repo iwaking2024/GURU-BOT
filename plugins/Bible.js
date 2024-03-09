@@ -9,7 +9,7 @@ let bibleChapterHandler = async (m, { conn }) => {
     let chapterInput = m.text.split(' ').slice(1).join('').trim();
 
     if (!chapterInput) {
-      throw new Error(`Please specify the chapter number or name. Example: -bible john 3:16`);
+      throw new Error(`Por favor especifique el número o nombre del capítulo. Example: -bible john 3:16`);
     }
 
     // Encode the chapterInput to handle special characters
@@ -19,7 +19,7 @@ let bibleChapterHandler = async (m, { conn }) => {
     let chapterRes = await fetch(`${BASE_URL}/${chapterInput}`);
     
     if (!chapterRes.ok) {
-      throw new Error(`Please specify the chapter number or name. Example: -bible john 3:16`);
+      throw new Error(`Por favor especifique el número o nombre del capítulo. Example: -bible john 3:16`);
     }
 
     let chapterData = await chapterRes.json();
