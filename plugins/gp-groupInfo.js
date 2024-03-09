@@ -7,32 +7,32 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
     const listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.id.split('@')[0]}`).join('\n')
     const owner = groupMetadata.owner || groupAdmins.find(p => p.admin === 'superadmin')?.id || m.chat.split`-`[0] + '@s.whatsapp.net'
     let text = `
-┌──「 *INFO GROUP* 」
+┌──「 *Información del Grupo* 」
 ▢ *♻️ID:*
    • ${groupMetadata.id}
-▢ *🔖NAME* : 
+▢ *🔖Nombre* : 
 • ${groupMetadata.subject}
-▢ *👥Members* :
+▢ *👥Miembros* :
 • ${participants.length}
-▢ *🤿Group Owner:*
+▢ *🤿Propietario del grupo:*
 • @${owner.split('@')[0]}
-▢ *🕵🏻‍♂️Admins:*
+▢ *🕵🏻‍♂️Dueño:*
  ${listAdmin}
-▢ *🪢 group configuration:*
+▢ *🪢 configuración del grupo:*
 • ${isBanned ? '✅' : '❎'} Banned
 • ${welcome ? '✅' : '❎'} Welcome
 • ${detect ? '✅' : '❎'} Detector
 • ${del ? '❎' : '✅'} Anti Delete
 • ${antiLink ? '✅' : '❎'} Anti Link WhatsApp
 
-*▢  📬 message settings:*
+*▢  📬 configuración de mensajes:*
 • Welcome: ${sWelcome}
 • Farewell: ${sBye}
 • Promoted: ${sPromote}
 • Degraded: ${sDemote}
 
-▢ *📌Description* :
-   • ${groupMetadata.desc?.toString() || 'unknown'}
+▢ *📌Descripción* :
+   • ${groupMetadata.desc?.toString() || 'desconocido'}
 `.trim()
     conn.sendFile(m.chat, pp, 'pp.jpg', text, m, false, { mentions: [...groupAdmins.map(v => v.id), owner] })
 }
