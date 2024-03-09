@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) throw `*EXAMPLE USAGE ${usedPrefix + command} Naruto*`;
+  if (!text) throw `*EJEMPLO DE USO ${usedPrefix + command} Naruto*`;
 
   const apiUrl = `https://weeb-api.vercel.app/wallpaper?query=${encodeURIComponent(text)}`;
 
@@ -15,7 +15,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     const imageUrls = await response.json();
 
     if (imageUrls.length === 0) {
-      throw `No wallpapers found for: ${text}`;
+      throw `No se han encontrado fondos de pantalla para: ${text}`;
     }
 
     // Choose 2 random images from the array
@@ -26,7 +26,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       const imageResponse = await fetch(imageUrl);
 
       if (!imageResponse.ok) {
-        throw `Error fetching image: ${imageResponse.status} ${imageResponse.statusText}`;
+        throw `Error al obtener la imagen: ${imageResponse.status} ${imageResponse.statusText}`;
       }
 
       // Use 'buffer()' to get the image data as a buffer
