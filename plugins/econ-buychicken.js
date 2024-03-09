@@ -4,7 +4,7 @@ let handler = async (m, { conn, command, args, usedPrefix }) => {
 
    
     
-    if (user.chicken > 0) return m.reply('You already have this')
+    if (user.chicken > 0) return m.reply('Ya tienes esto')
     if (user.credit < 500) return m.reply(`🟥 *No tienes suficiente cantidad de gold en tu billetera para comprar un chicken*`)
 
     user.credit -= 1000
