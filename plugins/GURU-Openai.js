@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 let handler = async (m, { text, conn, usedPrefix, command }) => {
   if (!text && !(m.quoted && m.quoted.text)) {
-    throw `Please provide some text or quote a message to get a response.`;
+    throw `Por favor proporcione algún texto o cite un mensaje para obtener una respuesta.`;
   }
 
   if (!text && m.quoted && m.quoted.text) {
@@ -27,7 +27,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
 
       if (!result) {
         
-        throw new Error('No valid JSON response from the first API');
+        throw new Error('No hay respuesta JSON válida de la primera API');
       }
 
       await conn.relayMessage(m.chat, {
