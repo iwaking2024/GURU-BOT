@@ -21,7 +21,7 @@ export async function before(m, { conn, isAdmin, isBotAdmin, isOwner, isROwner }
       // Check if the "PM Blocker" feature is enabled, and the sender is not an owner or real owner
       if (bot.pmblocker && !isOwner && !isROwner) {
         // Block the sender unconditionally for any private message sent
-        await m.reply(`*Hello @${m.sender.split`@`[0]}, messaging the bot privately is currently disabled. You have been blocked from using the bot.*`, false, { mentions: [m.sender] });
+        await m.reply(`*Hola @${m.sender.split`@`[0]}, Enviar mensajes al bot de forma privada está actualmente deshabilitado. Te han bloqueado el uso del bot.*`, false, { mentions: [m.sender] });
         await this.updateBlockStatus(m.chat, 'block');
   
         // Return true to indicate that the private message should be blocked
