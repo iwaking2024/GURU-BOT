@@ -136,7 +136,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 				conn.sendMessage(m.chat, await sticker.toMessage(), { quoted: m });
 			} else {
 				m.reply(
-					"Excuse me my friend, the picture does not reveal a face, please send a picture in which the face is exposed and visible."
+					"Disculpe mi amigo, la foto no revela una cara, por favor envíe una foto en la que la cara está expuesta y visible."
 				);
 			}
 		});
